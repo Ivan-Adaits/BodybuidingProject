@@ -129,6 +129,11 @@ public class AdminViewProfile extends javax.swing.JFrame {
 
         txtnameprofile.setBackground(new java.awt.Color(0, 204, 255));
         txtnameprofile.setBorder(null);
+        txtnameprofile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnameprofileActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtnameprofile, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 243, -1));
 
         txtsurnamesprofile.setBackground(new java.awt.Color(0, 204, 255));
@@ -240,7 +245,7 @@ public class AdminViewProfile extends javax.swing.JFrame {
         user.setUid(Integer.parseInt(txtidprofile.getText()));
 
         if (duc.updateUser(user)) {
-            JOptionPane.showMessageDialog(null, "Registro Actualizado");
+            JOptionPane.showMessageDialog(null, "Updated Records");
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -274,6 +279,10 @@ public class AdminViewProfile extends javax.swing.JFrame {
     private void btnback4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnback4ActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnback4ActionPerformed
+
+    private void txtnameprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameprofileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnameprofileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,9 +321,6 @@ public class AdminViewProfile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnback;
-    private javax.swing.JButton btnback1;
-    private javax.swing.JButton btnback2;
-    private javax.swing.JButton btnback3;
     private javax.swing.JButton btnback4;
     private javax.swing.JButton btnshowcomments;
     private javax.swing.JButton btnwritecommentview;

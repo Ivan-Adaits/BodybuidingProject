@@ -18,9 +18,9 @@ public class FormBodybuilderService {
         if (bodybuilder.getName().isBlank() || bodybuilder.getAge() <= 0 || bodybuilder.getAge() > 110 || bodybuilder.getHeight() <= 100 || bodybuilder.getHeight() > 300 || bodybuilder.getWeight() <= 40 || bodybuilder.getWeight() > 150) {
             result = "ErrorBlanco";
         }
-        if (String.valueOf(bodybuilder.getCategory()).equalsIgnoreCase("Select")) {
+        else  if (String.valueOf(bodybuilder.getCategory()).equalsIgnoreCase("Select")) {
             result = "ErrorCategoria";
-        }
+        } else{
         try {
             String sql = "insert into bodybuilder(Name,Age,Height,Weight,Category)values('" + bodybuilder.getName() + "','" + bodybuilder.getAge() + "','" + bodybuilder.getHeight() + "','" + bodybuilder.getWeight() + "','" + bodybuilder.getCategory() + "')";
             PreparedStatement ps;
@@ -30,6 +30,7 @@ public class FormBodybuilderService {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "THE DATA COULD NOT BE RECORDED " + e);
         }
+         }
         return result;
     }
 }
